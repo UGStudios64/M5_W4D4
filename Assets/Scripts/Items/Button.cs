@@ -1,20 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TimeExtra : MonoBehaviour
+public class Button : MonoBehaviour
 {
-    [SerializeField] private int time;
-    [SerializeField] private bool InMinutes;
-    [SerializeField] private UnityEvent<float, bool> OnTimeExtra;
-
+    [SerializeField] private UnityEvent OnButtonPressed;
 
     // GAME //-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            OnTimeExtra.Invoke(time, InMinutes);
-            Destroy(gameObject);
+            Debug.Log($"Button Pressed");
+            OnButtonPressed.Invoke();
         }
     }
 }
