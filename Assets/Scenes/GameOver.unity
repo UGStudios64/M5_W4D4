@@ -735,8 +735,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fade: {fileID: 125171234}
-  fadeTime: 1
-  startWith0Alpha: 1
+  fadeTime: 2
+  startWith0Alpha: 0
   firstButton: {fileID: 256673519}
 --- !u!1 &386943923
 GameObject:

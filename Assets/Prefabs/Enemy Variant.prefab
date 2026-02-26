@@ -10,23 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 144955408811053894, guid: 810461239692ecc42b26c4ece0a5105c,
         type: 3}
-      propertyPath: m_Mesh
-      value: 
+      propertyPath: m_VersionIndex
+      value: 3397
       objectReference: {fileID: 0}
     - target: {fileID: 1733166104502315063, guid: 810461239692ecc42b26c4ece0a5105c,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Enemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3022005689174752271, guid: 810461239692ecc42b26c4ece0a5105c,
         type: 3}
-      propertyPath: m_Mesh
-      value: 
+      propertyPath: m_VersionIndex
+      value: 342
       objectReference: {fileID: 0}
     - target: {fileID: 4544659855180017346, guid: 810461239692ecc42b26c4ece0a5105c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 9.44
       objectReference: {fileID: 0}
     - target: {fileID: 4544659855180017346, guid: 810461239692ecc42b26c4ece0a5105c,
         type: 3}
@@ -36,7 +36,7 @@ PrefabInstance:
     - target: {fileID: 4544659855180017346, guid: 810461239692ecc42b26c4ece0a5105c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -7.74
       objectReference: {fileID: 0}
     - target: {fileID: 4544659855180017346, guid: 810461239692ecc42b26c4ece0a5105c,
         type: 3}
@@ -73,8 +73,88 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7724888184650606404, guid: 810461239692ecc42b26c4ece0a5105c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e39a7ab3af5fe474d82f77af7e0f853f, type: 2}
+    m_RemovedComponents:
+    - {fileID: 6835049730832657493, guid: 810461239692ecc42b26c4ece0a5105c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1733166104502315063, guid: 810461239692ecc42b26c4ece0a5105c,
+        type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 3362968010190613933}
   m_SourcePrefab: {fileID: 100100000, guid: 810461239692ecc42b26c4ece0a5105c, type: 3}
+--- !u!1 &1400080880171149696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1733166104502315063, guid: 810461239692ecc42b26c4ece0a5105c,
+    type: 3}
+  m_PrefabInstance: {fileID: 820613115324481975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3362968010190613933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400080880171149696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700215d41139ad14f8dce315bd75fc25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  updatePathInterval: 1
+  target: {fileID: 0}
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 256
+  viewDistance: 10
+  viewAngle: 120
+  patrolTurnInterval: 3
+  patrolTurnAngle: 90
+  enemyRenderer: {fileID: 6942078545229735667}
+  normalMaterial: {fileID: 2100000, guid: e39a7ab3af5fe474d82f77af7e0f853f, type: 2}
+  chaseMaterial: {fileID: 2100000, guid: 4891a75f9ebaf6d49ba7a43fbbc393e8, type: 2}
+  OnTouchPlayer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Death
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  reachThreshold: 1
+--- !u!23 &6942078545229735667 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7724888184650606404, guid: 810461239692ecc42b26c4ece0a5105c,
+    type: 3}
+  m_PrefabInstance: {fileID: 820613115324481975}
+  m_PrefabAsset: {fileID: 0}
